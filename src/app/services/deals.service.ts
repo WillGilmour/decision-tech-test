@@ -9,7 +9,6 @@ export class DealsService {
 	constructor (private http: Http) {}
 
 	getDeals(): Observable <any> {
-		debugger;
 	   return this.http.get('assets/deals.json')
       	.map(res => res.json())
 	}
