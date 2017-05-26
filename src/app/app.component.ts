@@ -1,18 +1,16 @@
 import { Component } from '@angular/core';
-import {Http} from '@angular/http';
-import 'rxjs/add/operator/map';
+import { DealsService } from './services/deals.service'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
 
-  constructor(http: Http) {
-    http.get('assets/deals.json')
-      .map(res => res.json())
-      .subscribe(deals => this.deals = deals);
+  constructor(private dealsService: DealsService) {
+    dealsService.getDeals().subscribe( deals => { this.deals = deals } );
   }
 
   title = "start"

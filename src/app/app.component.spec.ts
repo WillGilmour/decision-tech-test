@@ -9,6 +9,7 @@ import {
 import {MockBackend} from '@angular/http/testing';
 
 import { AppComponent } from './app.component';
+import { DealsService } from './services/deals.service'
 
 
 
@@ -21,6 +22,7 @@ describe('AppComponent', () => {
       ],
       providers: [        
         { provide: XHRBackend, useClass: MockBackend },
+        DealsService
       ]
     }).compileComponents();
   }));
