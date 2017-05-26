@@ -10,7 +10,7 @@ import { DealsService } from './services/deals.service'
 export class AppComponent {
 
   constructor(private dealsService: DealsService) {
-    dealsService.getDeals().subscribe( deals => { this.deals = deals } );
+    dealsService.getDeals().subscribe( data => { this.deals = data.deals } );
   }
 
   title = "start"
