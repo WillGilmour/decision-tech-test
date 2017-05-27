@@ -1,0 +1,61 @@
+<table>
+	<thead>
+		<th>About</th>
+		<th>Contract Length</th>
+		<th>Speed / Usage</th>
+		<th>Offer</th>
+		<th>TV</th>
+		<th>Mobile</th>
+		<th>Cost</th>
+	</thead>
+
+	<tr *ngFor="let deal of deals">
+		<td>
+			{{deal.title}}
+		</td>
+		<td>
+			{{deal.contractLength}}
+		</td>
+		<td>
+			{{deal.speed.label}}
+			<br>
+			{{deal.usage.label}}
+		</td>
+		<td>
+			<img [src]="deal.offer.smallLogo" [alt]="deal.offer.title">
+		</td>
+		<td>
+			<ng-container *ngIf="!deal.popularChannels || deal.popularChannels.length === 0">
+				N/A
+			</ng-container>
+			<div *ngFor="let channel of deal.popularChannels">
+				<img [src]="channel.logo" [alt]="channel.name">
+			</div>
+		</td>
+		<td>
+			<ng-container *ngIf="!deal.mobile">
+				N/A
+			</ng-container>
+			<ng-container *ngIf="deal.mobile">
+				<div>
+					Data: {{deal.mobile.data.label}}
+				</div>
+				<div>
+					Minutes: {{deal.mobile.minutes.label}}
+				</div>
+				<div>
+					Texts: {{deal.mobile.texts.label}}
+				</div>
+				<div>
+					Connection: {{deal.mobile.connectionType.label}}
+				</div>						
+			</ng-container>
+		</td>
+
+		<td>
+			{{deal.prices[0]?.totalContractCost | currency : 'GBP' : true}}
+		</td>
+
+	</tr>
+
+</table>

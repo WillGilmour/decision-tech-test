@@ -6,10 +6,12 @@ import { HttpModule } from '@angular/http';
 import { DealsService } from './services/deals.service'
 
 import { AppComponent } from './app.component';
+import { DealGrid } from './components/dealGrid/dealGrid.component'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DealGrid
   ],
   imports: [
     BrowserModule,
