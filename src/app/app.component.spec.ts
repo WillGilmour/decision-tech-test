@@ -10,6 +10,7 @@ import {MockBackend} from '@angular/http/testing';
 
 import { AppComponent } from './app.component';
 import { DealsService } from './services/deals.service'
+import { DealGrid } from './components/dealGrid/dealGrid.component'
 
 
 
@@ -18,7 +19,8 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       imports: [HttpModule],
       declarations: [
-        AppComponent
+        AppComponent,
+        DealGrid
       ],
       providers: [        
         { provide: XHRBackend, useClass: MockBackend },
