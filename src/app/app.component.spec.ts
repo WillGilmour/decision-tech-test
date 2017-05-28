@@ -1,4 +1,5 @@
 import { TestBed, async } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 import {
   HttpModule,
   Http,
@@ -10,21 +11,26 @@ import {MockBackend} from '@angular/http/testing';
 
 import { AppComponent } from './app.component';
 import { DealsService } from './services/deals.service'
+import { FiltersService } from './services/filters.service'
+import { MockFiltersService } from './services/mocks/mockFilters.service'
 import { DealGridComponent } from './components/dealGrid/dealGrid.component'
+import { FiltersComponent } from './components/filters/filters.component'
 
 
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpModule],
+      imports: [HttpModule, FormsModule],
       declarations: [
         AppComponent,
-        DealGridComponent
+        DealGridComponent,
+        FiltersComponent,
       ],
       providers: [        
         { provide: XHRBackend, useClass: MockBackend },
-        DealsService
+        DealsService,
+        { provide: FiltersService, useClass: MockFiltersService }
       ]
     }).compileComponents();
   }));

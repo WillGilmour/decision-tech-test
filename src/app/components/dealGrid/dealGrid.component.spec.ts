@@ -5,6 +5,8 @@ import { DealGridComponent } from './dealGrid.component';
 import { dealsDataStub } from '../../services/deals.stub';
 
 
+import { FiltersService } from '../../services/filters.service';
+import { MockFiltersService } from '../../services/mocks/mockFilters.service';
 
 describe('DealGridComponent', () => {
 
@@ -19,6 +21,9 @@ describe('DealGridComponent', () => {
 	beforeEach(async() => {
 		TestBed.configureTestingModule({
 			declarations: [ DealGridComponent]
+			providers: [
+        		{ provide: FiltersService, useClass: MockFiltersService },
+			]
 		}).compileComponents();
 	});
 
