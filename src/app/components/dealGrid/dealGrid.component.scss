@@ -31,7 +31,14 @@
 			@media screen and (min-width: $breakpoint-desktop) {
 				text-align: center;
 				display: table-cell;
+				padding: 10px 15px;
 			}
+		}
+	}
+	&__na{
+		display: none;
+		@media screen and (min-width: $breakpoint-desktop) {
+			display: inline;
 		}
 	}
 }

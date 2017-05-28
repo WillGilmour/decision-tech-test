@@ -15,10 +15,10 @@
 				{{deal.title}}
 			</td>
 			<td>
-				{{deal.contractLength}}
+				{{deal.contractLength}} Months
 			</td>
 			<td>
-				{{deal.speed.label}}
+				{{deal.speed.label}} MB
 				<br>
 				{{deal.usage.label}}
 			</td>
@@ -26,17 +26,17 @@
 				<img [src]="deal.offer.smallLogo" [alt]="deal.offer.title">
 			</td>
 			<td>
-				<ng-container *ngIf="!deal.popularChannels || deal.popularChannels.length === 0">
+				<span class="deal-grid__na" *ngIf="!deal.popularChannels || deal.popularChannels.length === 0">
 					N/A
-				</ng-container>
+				</span>
 				<div *ngFor="let channel of deal.popularChannels">
 					<img [src]="channel.logo" [alt]="channel.name">
 				</div>
 			</td>
 			<td>
-				<ng-container *ngIf="!deal.mobile">
+				<span class="deal-grid__na" *ngIf="!deal.mobile">
 					N/A
-				</ng-container>
+				</span>
 				<ng-container *ngIf="deal.mobile">
 					<div>
 						Data: {{deal.mobile.data.label}}
