@@ -4,7 +4,7 @@ import { DealsService } from '../../services/deals.service'
 @Component({
   selector: 'deal-grid',
   templateUrl: './dealGrid.component.html',
-  // styleUrls: ['./dealGrid.component.scss']
+  styleUrls: ['./dealGrid.component.scss']
 })
 
 export class DealGrid {

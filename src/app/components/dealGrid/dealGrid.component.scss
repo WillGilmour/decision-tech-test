@@ -1,0 +1,37 @@
+@import "../../../styles/variables";
+
+.deal-grid{
+	&__head{
+		display: none;
+		@media screen and (min-width: $breakpoint-desktop) {
+			display: table-header-group;
+		}
+		th{
+			text-align: center;
+		}
+	}
+	&__body{
+		tr{
+			display: block;
+			background: $grey;
+			padding: 20px;
+			margin: 0 0 10px 0;
+			box-shadow: 4px 6px 10px 0px rgba(0, 0, 0, 0.34);
+			@media screen and (min-width: $breakpoint-desktop) {
+				display: table-row;
+				padding: 0;
+				margin: 0;
+				box-shadow: none;
+				background: none;
+			}
+		}
+		td{
+			display: block;
+			vertical-align: middle;
+			@media screen and (min-width: $breakpoint-desktop) {
+				text-align: center;
+				display: table-cell;
+			}
+		}
+	}
+}
