@@ -3,8 +3,7 @@ import { DebugElement }    from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { DealGridComponent } from './dealGrid.component';
 import { dealsDataStub } from '../../services/deals.stub';
-
-
+import { FilterDealsPipe } from '../../pipes/filterDeals.pipe';
 import { FiltersService } from '../../services/filters.service';
 import { MockFiltersService } from '../../services/mocks/mockFilters.service';
 
@@ -16,11 +15,9 @@ describe('DealGridComponent', () => {
 	let dbTable: DebugElement
 	let dbTableCell: DebugElement
 
-
-
 	beforeEach(async() => {
 		TestBed.configureTestingModule({
-			declarations: [ DealGridComponent]
+			declarations: [ DealGridComponent, FilterDealsPipe],
 			providers: [
         		{ provide: FiltersService, useClass: MockFiltersService },
 			]

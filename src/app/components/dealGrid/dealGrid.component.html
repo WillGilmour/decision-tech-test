@@ -10,7 +10,7 @@
 		<th>Cost</th>
 	</thead>
 	<tbody class="deal-grid__body">
-		<tr *ngFor="let deal of deals">
+		<tr *ngFor="let deal of deals | filterdeals">
 			<td>
 				{{deal.title}}
 			</td>

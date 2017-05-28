@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { DealsService } from './services/deals.service';
 import { FiltersService } from './services/filters.service';
 
+import { FilterDealsPipe } from './pipes/filterDeals.pipe';
 
 import { AppComponent } from './app.component';
 import { DealGridComponent } from './components/dealGrid/dealGrid.component';
@@ -16,6 +17,7 @@ import { FiltersComponent } from './components/filters/filters.component';
     AppComponent,
     DealGridComponent,
     FiltersComponent,
+    FilterDealsPipe
   ],
   imports: [
     BrowserModule,

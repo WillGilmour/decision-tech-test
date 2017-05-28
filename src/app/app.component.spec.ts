@@ -15,8 +15,7 @@ import { FiltersService } from './services/filters.service'
 import { MockFiltersService } from './services/mocks/mockFilters.service'
 import { DealGridComponent } from './components/dealGrid/dealGrid.component'
 import { FiltersComponent } from './components/filters/filters.component'
-
-
+import { FilterDealsPipe } from './pipes/filterDeals.pipe'
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -26,6 +25,7 @@ describe('AppComponent', () => {
         AppComponent,
         DealGridComponent,
         FiltersComponent,
+        FilterDealsPipe
       ],
       providers: [        
         { provide: XHRBackend, useClass: MockBackend },
