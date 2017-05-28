@@ -1,4 +1,4 @@
-const dealsDataStub = `{
+export const dealsDataStub = `{
    "deals":[
 		{
          "title":"Unlimited Broadband & Weekend Calls",
