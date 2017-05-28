@@ -10,7 +10,7 @@ import {MockBackend} from '@angular/http/testing';
 
 import { AppComponent } from './app.component';
 import { DealsService } from './services/deals.service'
-import { DealGrid } from './components/dealGrid/dealGrid.component'
+import { DealGridComponent } from './components/dealGrid/dealGrid.component'
 
 
 
@@ -20,7 +20,7 @@ describe('AppComponent', () => {
       imports: [HttpModule],
       declarations: [
         AppComponent,
-        DealGrid
+        DealGridComponent
       ],
       providers: [        
         { provide: XHRBackend, useClass: MockBackend },

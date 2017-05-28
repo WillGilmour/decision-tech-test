@@ -7,7 +7,7 @@ import { DealsService } from '../../services/deals.service'
   styleUrls: ['./dealGrid.component.scss']
 })
 
-export class DealGrid {
+export class DealGridComponent {
 
   @Input() deals: any[]
 
