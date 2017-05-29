@@ -1,23 +1,23 @@
 <form class="filters">
-	<div>
-		<label for="filters__broadband">Broadband:</label> 
+	<div class="filters__row">
 		<input id="filters__broadband" name="filters__broadband" type="checkbox" [(ngModel)]="filters.Broadband">
+		<label for="filters__broadband">Broadband</label> 
 	</div>
-	<div>
-		<label for="filters__mobile">Mobile:</label> 
+	<div class="filters__row">
 		<input id="filters__mobile" name="filters__mobile" type="checkbox" [(ngModel)]="filters.Mobile">
+		<label for="filters__mobile">Mobile</label> 
 	</div>
-	<div>
-	<label for="filters__tv">	TV: </label>
+	<div class="filters__row">
 		<input id="filters__tv" name="filters__tv" type="checkbox" [(ngModel)]="filters.TV">
+		<label for="filters__tv">TV</label>
 	</div>
-	<div>
+	<div class="filters__row">
 		<label for="filters__speed">Speed</label>
 		<select id="filters__speed" name="filters__speed" [(ngModel)]="selections.speed">>
 			<option *ngFor="let speed of speedOptions" [value]="speed">{{speed}}</option>
 		</select>
 	</div>
-	<div>
+	<div class="filters__row">
 		<label for="filters__data">Mobile data</label>
 		<select id="filters__data" name="filters__data" [(ngModel)]="selections.data">>
 			<option *ngFor="let data of mobileDataOptions" [value]="data">{{data}}</option>

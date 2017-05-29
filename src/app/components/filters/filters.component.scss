@@ -1,0 +1,26 @@
+@import "../../../styles/variables";
+
+.filters{
+	position: fixed;
+	top: 0;
+	height: 100%;
+	min-width: $filter-width;
+	padding: 10px 20px;
+	background: $dark-grey;
+	color: $light-text;
+
+	&__row{
+		margin: 0 0 15px 0;
+	}
+
+	select{
+		display: block;
+	}
+
+	@media screen and (min-width: $breakpoint-desktop) {
+		position: static;
+		top: auto;
+		background: $grey;
+		color: $dark-text;
+	}
+}

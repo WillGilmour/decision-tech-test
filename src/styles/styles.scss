@@ -39,6 +39,7 @@ html, body {
 //Header
 
 .site-header{
+	padding: 20px;
 	&__mobile-menu{
 		@media screen and (min-width: $breakpoint-desktop) {
 			display: none;
