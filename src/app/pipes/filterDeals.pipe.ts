@@ -13,11 +13,31 @@ export class FilterDealsPipe implements PipeTransform {
 
 	}
 	
-	transform(allDeals) {
-		return this.filter(allDeals)
+	transform(deals) {
+		deals = this.filterByProductType(deals);
+		deals = this.filterBySelection(deals);
+		return deals;
 	}
 
-	private filter(array) {
+	private filterBySelection(array) {
+		let testSelections = this.filtersService.selections;
+		return array.filter((item) => {
+			return this.testSpeed(item, testSelections.speed) && this.testData(item, testSelections.data)
+		});
+	}
+
+	private testSpeed(item, selection){
+		return selection === "Any" || item.speed.label === selection;
+	}
+
+	private testData(item, selection){
+		if(!item.mobile && selection !== "Any"){
+			return false;
+		}
+		return selection === "Any" || item.mobile.data.label === selection;
+	}
+
+	private filterByProductType(array) {
 		let testProductTypes = this.filtersService.filters;
 
 		if(this.checkFilters(testProductTypes)){
