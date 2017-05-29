@@ -13,7 +13,11 @@ export class AppComponent {
     dealsService.getDeals().subscribe( data => { this.deals = data.deals } );
   }
 
+  toggleMenu(){
+  	this.menuOn = !this.menuOn;
+  }
+
+  menuOn = <boolean> false
   title = "start"
   deals = []
-
 }
