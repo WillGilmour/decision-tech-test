@@ -6,4 +6,8 @@ export class MockFiltersService extends FiltersService {
 		TV: false,
 		Mobile: false
 	}
+	selections: {
+		speed: "Any",
+		data: "Any"
+	}
 }

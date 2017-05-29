@@ -65,5 +65,33 @@ describe('FilterDealsPipe', () => {
 		}
 	}));
 
+	it('GIVEN results WHEN filtering by Broadband AND Speed 52MB THEN 1 result present' , inject([FiltersService], (filtersService) => {
+		
+		filtersService.filters.Broadband = true;
+		filtersService.filters.Mobile = false;
+		filtersService.filters.TV = false;
+		filtersService.selections.speed = "52";
 
+		let pipe = new FilterDealsPipe(filtersService);
+		let results = pipe.transform(deals);
+		expect(results.length).toBe(1);
+		for(let result of results){
+			expect(result.productTypes.indexOf("Broadband")).not.toBeLessThan(0);
+			expect(result.productTypes.indexOf("Mobile")).toBeLessThan(0);
+			expect(result.productTypes.indexOf("TV")).toBeLessThan(0);
+			expect(result.speed.label).toBe("52");
+		}
+	}));
+
+	it('GIVEN results WHEN filtering by Mobile, Broadband, TV selected AND Mobile Data 5GB THEN 0 results' , inject([FiltersService], (filtersService) => {
+		
+		filtersService.filters.Broadband = true;
+		filtersService.filters.Mobile = true;
+		filtersService.filters.TV = true;
+		filtersService.selections.data = "5 GB";
+
+		let pipe = new FilterDealsPipe(filtersService);
+		let results = pipe.transform(deals);
+		expect(results.length).toBe(0);
+	}));
 });
