@@ -8,6 +8,9 @@ import { FiltersService } from '../../services/filters.service'
 })
 
 export class FiltersComponent {
+
+	@Input() on: boolean
+
 	constructor (filtersService: FiltersService ) {
 		this.filters = filtersService.filters;
 		this.selections = filtersService.selections;

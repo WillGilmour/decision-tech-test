@@ -1,4 +1,4 @@
-<form class="filters">
+<form class="filters" [class.filters--on]="on">
 	<div class="filters__row">
 		<input id="filters__broadband" name="filters__broadband" type="checkbox" [(ngModel)]="filters.Broadband">
 		<label for="filters__broadband">Broadband</label> 
