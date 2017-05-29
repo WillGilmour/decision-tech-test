@@ -1,6 +1,10 @@
 @import "../../../styles/variables";
 
 .deal-grid{
+	width: 100%;
+	@media screen and (min-width: $breakpoint-desktop) {
+		width: auto;
+	}
 	&__head{
 		display: none;
 		@media screen and (min-width: $breakpoint-desktop) {

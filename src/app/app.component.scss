@@ -1,1 +1,39 @@
- 
+@import "../styles/variables";
+
+.container{
+	@media screen and (min-width: $breakpoint-desktop) {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+	}
+	min-height: 100%;
+	width: 100%;
+	max-width: 1200px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.site-content{
+	@media screen and (min-width: $breakpoint-desktop) {
+		display: flex;
+		flex-direction: row;
+		flex: 1;
+	}
+}
+
+//Header
+
+.site-header{
+	position: relative;
+	padding: 20px;
+	&__mobile-menu{
+		position: absolute;
+	    right: 20px;
+	    top: 50%;
+	    height: 36px;
+	    margin: -18px 0 0 0;
+		@media screen and (min-width: $breakpoint-desktop) {
+			display: none;
+		}
+	}
+} 
