@@ -1,6 +1,7 @@
 @import "../../../styles/variables";
 
 .filters{
+	display: none;
 	position: fixed;
 	top: 0;
 	height: 100%;
@@ -8,6 +9,10 @@
 	padding: 10px 20px;
 	background: $dark-grey;
 	color: $light-text;
+
+	&--on{
+		display: block;
+	}
 
 	&__row{
 		margin: 0 0 15px 0;
@@ -22,5 +27,6 @@
 		top: auto;
 		background: $grey;
 		color: $dark-text;
+		display: block;
 	}
 }
