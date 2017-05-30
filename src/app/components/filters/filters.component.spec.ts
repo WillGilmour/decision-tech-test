@@ -16,9 +16,9 @@ describe('FiltersComponent', () => {
 	beforeEach(async() => {
 		TestBed.configureTestingModule({
 			declarations: [ FiltersComponent],
-			imports: [FormsModule]
+			imports: [FormsModule],
 			providers: [
-        		{ provide: FiltersService, useClass: MockFiltersService },
+        		{ provide: FiltersService, useClass: MockFiltersService }
 			]
 		}).compileComponents();
 	});
@@ -33,13 +33,13 @@ describe('FiltersComponent', () => {
 		comp.on = false;
 		fixture.detectChanges();
 		expect(dbFilterPanel.classes['filters--on']).toBe(false);
-	})
+	});
 
 
 	it('Visibility class should be applied when visibility toggle is set to true', ()=> {
 		comp.on = true;
 		fixture.detectChanges();
 		expect(dbFilterPanel.classes['filters--on']).toBe(true);
-	})
+	});
 })
 
